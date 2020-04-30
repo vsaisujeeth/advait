@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Recipe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Add your recipe</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">recipe name</ion-label>
+        <ion-input [(ngModel)] = "recipeName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">recipe Image link</ion-label>
+        <ion-input [(ngModel)] = "img"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-textarea [(ngModel)] = "desc"></ion-textarea>
+      </ion-item>
+      <ion-button (click)="onclick()" [routerLink]="['/','recipes']" expand="block" fill="clear" shape="round">
+        ADD
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

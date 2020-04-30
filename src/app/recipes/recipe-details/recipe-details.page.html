@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref=""></ion-back-button>
+        
+        
+      </ion-buttons>
+    <ion-title>{{recipe.title}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button [routerLink]= "['/','chat']">
+        <ion-icon name="chatbubbles"></ion-icon>
+      </ion-button>
+    
+        <ion-button (click)="onDelete()">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-img [src]="recipe.img"></ion-img>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Description</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{recipe.desc}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  
+  <br>
+  <!-- <ion-button (click)="onAdd()"  shape="round">
+    <ion-icon slot="start" name="add"></ion-icon>
+    Add chef
+  </ion-button> -->
+  
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Ingrediants</ion-label>
+      <ion-button fill="clear" [routerLink]="['/','add-ingredient',recipe.id]">Add Ingrediant</ion-button>
+    </ion-list-header>
+    <ion-item-sliding *ngFor = "let o of recipe.ingredients">
+      <ion-item>
+        <ion-label>{{o}}</ion-label>
+      </ion-item>
+  
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="ondel(o)">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  
+    <!-- <ion-item *ngFor = "let o of recipe.ingredients">
+      <ion-label>{{o}}</ion-label>
+    </ion-item> -->
+  </ion-list>
+
+</ion-content>
