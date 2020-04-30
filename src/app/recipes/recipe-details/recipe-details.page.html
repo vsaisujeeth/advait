@@ -39,8 +39,8 @@
   
   <ion-list>
     <ion-list-header>
-      <ion-label>Ingrediants</ion-label>
-      <ion-button fill="clear" [routerLink]="['/','add-ingredient',recipe.id]">Add Ingrediant</ion-button>
+      <ion-label>ingredients</ion-label>
+      <ion-button fill="clear" [routerLink]="['/','add-ingredient',recipe.id]">Add ingredient</ion-button>
     </ion-list-header>
     <ion-item-sliding *ngFor = "let o of recipe.ingredients">
       <ion-item>
